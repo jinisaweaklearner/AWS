@@ -22,7 +22,7 @@ AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web ap
 ## ELB Elastic Load Balancing
 Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions. It can handle the varying load of your application traffic in a single Availability Zone or across multiple Availability Zones. Elastic Load Balancing offers three types of load balancers that all feature the high availability, automatic scaling, and robust security necessary to make your applications fault tolerant.
 
-- Application Load Balancer (for micro services)
+- Application Load Balancer (for micro services;path-based routing)
 - Network Load Balancer
 - Classic Load Balancer
 

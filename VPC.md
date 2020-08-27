@@ -35,3 +35,9 @@ DNS Resolution
 
 
 Network ACLs & Security Group Incoming Request
+
+- A gateway VPC endpoint only supports S3 and DynamoDB
+- Interface VPC endpoints
+
+## Example
+you can create a public-facing subnet for your web servers that have access to the internet. You can also place your backend systems, such as databases or application servers, in a private-facing subnet with no internet access.
