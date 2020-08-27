@@ -12,6 +12,9 @@ Amazon EFS file systems are distributed across an unconstrained number of storag
 
 https://docs.aws.amazon.com/efs/latest/ug/performance.html
 
+Amazon EFS provides elastic, shared file storage that is POSIX-compliant. The file system you create supports concurrent read and write access from multiple Amazon EC2 instances and is accessible from all of the Availability Zones in the AWS Region where it is created.
+
+File lock, concurrent access, auto scale = EFS
 
 ## AWS Elastic Beanstalk
 AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
@@ -48,7 +51,7 @@ To handle traffic = Autoscaling + ELB
 To cost optimize = Cloudfront
 
 ## CloudFront
-Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and image files, to your users. CloudFront delivers your content through a worldwide network of data centers called edge locations. When a user requests content that you're serving with CloudFront, the user is routed to the edge location that provides the lowest latency (time delay), so that content is delivered with the best possible performance.
+Amazon CloudFront is a web service that speeds up distribution of your `static` and dynamic web content, such as .html, .css, .js, and image files, to your users. CloudFront delivers your content through a worldwide network of data centers called edge locations. When a user requests content that you're serving with CloudFront, the user is routed to the edge location that provides the lowest latency (time delay), so that content is delivered with the best possible performance.
 https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html
 
 ## How is Amazon SQS different from Amazon SNS?
@@ -78,13 +81,14 @@ Today we are simplifying access to S3 resources from within a VPC by introducing
 
 EC2 instances running in private subnets of a VPC can now have controlled access to S3 buckets, objects, and API functions that are in the same region as the VPC. You can use an S3 bucket policy to indicate which VPCs and which VPC Endpoints have access to your S3 buckets.
 
+- Pvt connectivity to AWS resource w/o internet use + same account - VPC Endpoint
+- Pvt connectivity to AWS resource w/o internet use + different account - VPC Peering
+
 ## Amazon EBS volume types
 - General Purpose SSD (gp2)	
 - Provisioned IOPS SSD (io1)	
-- Throughput Optimized HDD (st1)	
+- Throughput Optimized HDD (st1); HDD has `sequential` workloads	
 - Cold HDD (sc1)
-
-- HDD has sequential workloads
 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html
 
@@ -100,7 +104,7 @@ Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully manag
 Amazon EFS is designed to provide massively parallel shared access to thousands of Amazon EC2 instances, enabling your applications to achieve high levels of aggregate throughput and IOPS with consistent low latencies.
 
 ## Customer master keys (CMKs)
-
+All activity using a key in a custom key store is also logged to AWS CloudTrail in the same way.
 https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html
 
 ## Lambda@edge

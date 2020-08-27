@@ -59,3 +59,7 @@ https://en.wikipedia.org/wiki/Port_(computer_networking)
 ## what is DNS
 https://aws.amazon.com/route53/what-is-dns/
 
+## Auto Scaling groups
+An Auto Scaling group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. An Auto Scaling group starts by launching enough instances to meet its desired capacity. It maintains this number of instances by performing periodic health checks on the instances in the group.
+
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html
