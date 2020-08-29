@@ -116,6 +116,11 @@ https://aws.amazon.com/lambda/edge/
 Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost effective way to route end users to Internet applications by translating names like www.example.com into the numeric IP addresses like 192.0.2.1 that computers use to connect to each other. Amazon Route 53 is fully compliant with IPv6 as well.
 https://aws.amazon.com/route53/
 
+- Active-active failover (when you want all of your resources to be available the majority of the time.)
+- Active-passive failover (when you want a primary resource or group of resources to be available the majority of the time and you want a secondary resource or group of resources to be on standby in case all the primary resources become unavailable)
+- Latency routing policy – Use when you have resources in multiple AWS Regions and you want to route traffic to the region that provides the best latency.
+
+
 ## Kinesis Data Firehose
 Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data lakes, data stores, and analytics services. It can capture, transform, and deliver streaming data to Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, generic HTTP endpoints, and service providers like Datadog, New Relic, MongoDB, and Splunk. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. 
 
@@ -148,5 +153,6 @@ Glacier = lowest cost but pay extra for expedited retrieval
 ## Securing environment variables in lambda
 Lambda encrypts environment variables with a key that it creates in your account (an AWS managed customer master key (CMK)). Use of this key is free. You can also choose to provide your own key for Lambda to use instead of the default key.
 
-
+## Fargate
+AWS Fargate is Amazon’s solution to run docker containers without managing any servers for container orchestration. Where things get confusing with Fargate is that Fargate is actually just one way of running containers in Amazon ECS. 
 
