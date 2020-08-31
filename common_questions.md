@@ -156,3 +156,9 @@ Lambda encrypts environment variables with a key that it creates in your account
 ## Fargate
 AWS Fargate is Amazon’s solution to run docker containers without managing any servers for container orchestration. Where things get confusing with Fargate is that Fargate is actually just one way of running containers in Amazon ECS. 
 
+## RDS
+For your MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server database (DB) instances, you can use Amazon RDS Multi-AZ deployments. When you provision a Multi-AZ DB instance, Amazon RDS automatically creates a primary DB instance and synchronously replicates the data to a standby instance in a different Availability Zone (AZ).
+
+## Compare 4 Storage Classes
+https://aws.amazon.com/s3/storage-classes/
+

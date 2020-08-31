@@ -63,3 +63,8 @@ https://aws.amazon.com/route53/what-is-dns/
 An Auto Scaling group contains a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. An Auto Scaling group starts by launching enough instances to meet its desired capacity. It maintains this number of instances by performing periodic health checks on the instances in the group.
 
 https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html
+
+## Auto Scaling Termination Policy
+Amazon EC2 Auto Scaling first identifies which of the two types (Spot or On-Demand) should be terminated. It then applies the termination policy in each Availability Zone individually, and identifies which instance (within the identified purchase option) in which Availability Zone to terminate that will result in the Availability Zones being most balanced. The same principles apply to Auto Scaling groups that use a mixed instances configuration with weights defined for the instance types.
+
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html
