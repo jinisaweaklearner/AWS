@@ -159,6 +159,9 @@ AWS Fargate is Amazon’s solution to run docker containers without managing any
 ## RDS
 For your MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server database (DB) instances, you can use Amazon RDS Multi-AZ deployments. When you provision a Multi-AZ DB instance, Amazon RDS automatically creates a primary DB instance and synchronously replicates the data to a standby instance in a different Availability Zone (AZ).
 
+High Availability (Multi-AZ) for Amazon RDS
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html
+
 ## Compare 4 Storage Classes
 https://aws.amazon.com/s3/storage-classes/
 
