@@ -8,6 +8,10 @@ Which approach will meet all of these requirements?
 Use pre-signed URL (basically an API) that you can define and set an expiration on and many other parameters for users or entities that don't have AWS credentials to access objects in Amazon S3
 
 ## EFS
+
+Amazon EFS is designed to provide massively parallel shared access to thousands of Amazon EC2 instances, enabling your applications to achieve high levels of aggregate throughput and IOPS with consistent low latencies.
+
+
 Amazon EFS file systems are distributed across an unconstrained number of storage servers. This distributed data storage design enables file systems to grow elastically to petabyte scale and enables massively parallel access from Amazon EC2 instances to your data. The distributed design of Amazon EFS avoids the bottlenecks and constraints inherent to traditional file servers.
 
 https://docs.aws.amazon.com/efs/latest/ug/performance.html
@@ -17,14 +21,20 @@ Amazon EFS provides elastic, shared file storage that is POSIX-compliant. The fi
 File lock, concurrent access, auto scale = EFS
 
 ## AWS Elastic Beanstalk
-AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
+- AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
+- No need to manage services
+- the service automatically handles all the details such as resource provisioning, load balancing, auto-scaling, and monitoring
 
 ## ELB Elastic Load Balancing
 Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions. It can handle the varying load of your application traffic in a single Availability Zone or across multiple Availability Zones. Elastic Load Balancing offers three types of load balancers that all feature the high availability, automatic scaling, and robust security necessary to make your applications fault tolerant.
 
-- Application Load Balancer (for micro services;path-based routing)
+- Application Load Balancer
+  - Elastic Load Balancing provides access logs that capture detailed information about requests sent to your load balancer. 
+  - for micro services;path-based routing
 - Network Load Balancer
 - Classic Load Balancer
+
+Internet-Facing LB needs public subnet for each AZ (2 x 1 public subnet). Web and DB servers need to be on separate pvt subnets in 2 AZs for HA
 
 ## Elastic Block Store (EBS)
 Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices. You can mount these volumes as devices on your instances. EBS volumes that are attached to an instance are exposed as storage volumes that persist independently from the life of the instance. You can create a file system on top of these volumes, or use them in any way you would use a block device (such as a hard drive). You can dynamically change the configuration of a volume attached to an instance.
@@ -51,8 +61,19 @@ To handle traffic = Autoscaling + ELB
 To cost optimize = Cloudfront
 
 ## CloudFront
+Amazon CloudFront is an easy to use, high performance, and cost efficient content delivery service. With over 50 worldwide edge locations, CloudFront is able to deliver your content to your customers with low latency in any part of the world.
+
 Amazon CloudFront is a web service that speeds up distribution of your `static` and dynamic web content, such as .html, .css, .js, and image files, to your users. CloudFront delivers your content through a worldwide network of data centers called edge locations. When a user requests content that you're serving with CloudFront, the user is routed to the edge location that provides the lowest latency (time delay), so that content is delivered with the best possible performance.
 https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html
+
+Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment. CloudFront is integrated with AWS – both physical locations that are directly connected to the AWS global infrastructure, as well as other AWS services. 
+
+## CloudFront and Origin Access Identity
+To restrict access to content that you serve from Amazon S3 buckets, follow these steps:
+
+Create a special CloudFront user called an origin access identity (OAI) and associate it with your distribution.
+
+Configure your S3 bucket permissions so that CloudFront can use the OAI to access the files in your bucket and serve them to your users. Make sure that users can’t use a direct URL to the S3 bucket to access a file there.
 
 ## How is Amazon SQS different from Amazon SNS?
 Amazon SNS allows applications to send time-critical messages to multiple subscribers through a “push” mechanism, eliminating the need to periodically check or “poll” for updates. Amazon SQS is a message queue service used by distributed applications to exchange messages through a polling model, and can be used to decouple sending and receiving components. 
@@ -68,8 +89,7 @@ https://aws.amazon.com/blogs/aws/protect-your-data-with-new-ebs-encryption/
 ## Copying an Amazon EBS snapshot
 With Amazon EBS, you can create point-in-time snapshots of volumes, which we store for you in Amazon S3. After you create a snapshot and it has finished copying to Amazon S3 (when the snapshot status is completed), you can copy it from one AWS Region to another, or within the same Region.
 
-## Amazon CloudFront
-Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment. CloudFront is integrated with AWS – both physical locations that are directly connected to the AWS global infrastructure, as well as other AWS services. 
+
 
 ## VPC and S3
 I would like to tell you about a new AWS feature that will allow you to make even better use of Amazon Virtual Private Cloud and Amazon Simple Storage Service (S3). As you probably know, S3 provides you with secure, durable, and highly scalable object storage. You can use the Virtual Private Cloud to create a logically isolated section of the AWS Cloud, with full control over a virtual network that you define.

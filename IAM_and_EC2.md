@@ -68,3 +68,34 @@ https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html
 Amazon EC2 Auto Scaling first identifies which of the two types (Spot or On-Demand) should be terminated. It then applies the termination policy in each Availability Zone individually, and identifies which instance (within the identified purchase option) in which Availability Zone to terminate that will result in the Availability Zones being most balanced. The same principles apply to Auto Scaling groups that use a mixed instances configuration with weights defined for the instance types.
 
 https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html
+
+
+## 5 types of EC2 instance
+https://aws.amazon.com/ec2/pricing/
+- On-demand 
+  - pay for compute capacity by the hour or the second
+  - short-term
+  - Applications being developed or tested on Amazon EC2 for the first time
+- Spot instances
+  - request spare Amazon EC2 computing capacity for up to 90% off the On-Demand price.
+  - Applications that have flexible start and end times
+  - Applications that are only feasible at very low compute prices
+  - Users with urgent computing needs for large amounts of additional capacity
+- Savings Plans
+  - Applications with steady state usage
+  - Customers that can commit to using EC2 over a 1 or 3 year term to reduce their total computing costs
+- Reserved Instances
+  - Applications with steady state usage
+  - Applications that may require reserved capacity
+  - a significant discount (up to 75%) compared to On-Demand instance pricing
+- Dedicated Hosts
+  - a physical EC2 server
+  - Can be purchased On-Demand (hourly)
+  - Can be purchased as a Reservation for up to 70% off the On-Demand price
+  - Dedicated Hosts allow you to use your existing per-socket, per-core, or per-VM software licenses, including Windows Server, SQL Server, SUSE Linux Enterprise Server, Red Hat Enterprise Linux, or other software licenses that are bound to VMs, sockets, or physical cores, subject to your license terms. 
+
+  ## EC2 Auto Scaling
+  Amazon EC2 Auto Scaling is a fully managed service designed to launch or terminate Amazon EC2 instances automatically to help ensure you have the correct number of Amazon EC2 instances available to handle the load for your application. 
+
+  ## Amazon EC2 Auto Scaling vs. AWS Auto Scaling
+  AWS Auto Scaling to manage scaling for multiple resources across multiple services. AWS Auto Scaling lets you define dynamic scaling policies for multiple EC2 Auto Scaling groups or other resources using predefined scaling strategies. 
