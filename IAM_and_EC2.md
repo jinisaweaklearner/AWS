@@ -1,15 +1,15 @@
 
-# General Knowledge
+## General Knowledge
 - Data is phisically stored in multiple different availability zones
 - AWS is rigion scoped except IAM and S3 which are global services
 
 
-# IAM
+## IAM
 - users
 - groups (users can join groups)
 - roles for different applications
 
-# EC2
+## EC2
 Main capability of EC2:
 - Rent virtual machine (EC2)
 - Store data on virtual drive (EBC)
@@ -38,10 +38,10 @@ https://en.wikipedia.org/wiki/Port_(computer_networking)
 • IPv6 is newer and solves problems for the Internet of Things (IoT).
 • IPv4 allows for 3.7 billion different addresses in the public space • IPv4: [0-255].[0-255].[0-255].[0-255].
 
-### Public IP
+## Public IP
 • Public IP means the machine can be identified on the internet (WWW)
 • Must be unique across the whole web (not two machines can have the same public IP). • Can be geo-located easily
-### Private IP
+## Private IP
 • Private IP means the machine can only be identified on a private network only • The IP must be unique across the private network
 • BUT two different private networks (two companies) can have the same IPs.
 • Machines connect to WWW using an internet gateway (a proxy)
@@ -53,7 +53,25 @@ https://en.wikipedia.org/wiki/Port_(computer_networking)
 • An Elastic IP is a public IPv4 IP you own as long as you don’t delete it
 • You can attach it to one instance at a time
 
+
+
+## EC2 auto scaling
+
+- Dynamic scaling
+
+Changing based on some metrics. For example, let's say that you have a web application that currently runs on two instances, and you want the CPU utilization of the Auto Scaling group to stay at around 50 percent when the load on the application changes. This gives you extra capacity to handle traffic spikes without maintaining an excessive number of idle resources. https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html
+
+- Scheduled scaling
+
+Scheduled scaling allows you to set your own scaling schedule. For example, let's say that every week the traffic to your web application starts to increase on Wednesday, remains high on Thursday, and starts to decrease on Friday. 
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html
+
+- Manual scaling
+
+
+
 ## EC2 User Data
+
 • It is possible to bootstrap our instances using an EC2 User data script
 
 ## what is DNS

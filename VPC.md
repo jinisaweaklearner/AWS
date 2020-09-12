@@ -41,3 +41,10 @@ Network ACLs & Security Group Incoming Request
 
 ## Example
 you can create a public-facing subnet for your web servers that have access to the internet. You can also place your backend systems, such as databases or application servers, in a private-facing subnet with no internet access.
+
+
+
+### VPC endpoint and VPC Peering
+
+- Pvt connectivity to AWS resource w/o internet use + same account - VPC Endpoint
+- Pvt connectivity to AWS resource w/o internet use + different account - VPC Peering
