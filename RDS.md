@@ -55,3 +55,15 @@ vs RDS Databases ports:
 ## Redshift
 Amazon Redshift workload management (WLM) enables users to flexibly manage priorities within workloads so that short, fast-running queries won't get stuck in queues behind long-running queries.
 
+## use DynamoDB for session data
+https://aws.amazon.com/blogs/aws/scalable-session-handling-in-php-using-amazon-dynamodb/
+
+## Types of Aurora Endpoints
+- Cluster endpoint
+  - perform write operations such as DDL statements
+- Reader endpoint
+  - provides load-balancing support for read-only connections to the DB cluster
+- Custom endpoint
+  - represents a set of DB instances that you choose
+- Instance endpoint
+

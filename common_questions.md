@@ -1,11 +1,4 @@
 
-## S3 pre-signed URL 
-A Solutions Architect is designing a new social media application. The application must provide a secure method for uploading profile photos. Each user should be able to upload a profile photo into a shared storage location for one week after their profile is created.
-Which approach will meet all of these requirements?
-
-- Use Amazon S3 with the default private access policy and generate pre-signed URLs each time a new site profile is created.
-
-Use pre-signed URL (basically an API) that you can define and set an expiration on and many other parameters for users or entities that don't have AWS credentials to access objects in Amazon S3
 
 ## EFS
 
@@ -37,11 +30,20 @@ Elastic Load Balancing automatically distributes incoming application traffic ac
 Internet-Facing LB needs public subnet for each AZ (2 x 1 public subnet). Web and DB servers need to be on separate pvt subnets in 2 AZs for HA
 
 ## Elastic Block Store (EBS)
-Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices. You can mount these volumes as devices on your instances. EBS volumes that are attached to an instance are exposed as storage volumes that persist independently from the life of the instance. You can create a file system on top of these volumes, or use them in any way you would use a block device (such as a hard drive). You can dynamically change the configuration of a volume attached to an instance.
+Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances. EBS volumes behave like raw, unformatted block devices. You can mount these volumes as devices on your instances. EBS volumes that are attached to an instance are exposed as storage volumes that `persist independently from the life of the instance`. You can create a file system on top of these volumes, or use them in any way you would use a block device (such as a hard drive). You can dynamically change the configuration of a volume attached to an instance.
 
 - RAID 0
 - RAID 1
 
+Amazon Elastic Block Store (EBS) is an easy to use, high performance block storage service designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads at any scale.
+
+Block storage that can be encrypted=EBS
+
+https://aws.amazon.com/blogs/aws/protect-your-data-with-new-ebs-encryption/
+
+
+## Copying an Amazon EBS snapshot
+With Amazon EBS, you can create point-in-time snapshots of volumes, which we store for you in Amazon S3. After you create a snapshot and it has finished copying to Amazon S3 (when the snapshot status is completed), you can copy it from one AWS Region to another, or within the same Region.
 # EC2 auto scaling
 
 ## Dynamic scaling
@@ -78,16 +80,7 @@ Configure your S3 bucket permissions so that CloudFront can use the OAI to acces
 ## How is Amazon SQS different from Amazon SNS?
 Amazon SNS allows applications to send time-critical messages to multiple subscribers through a “push” mechanism, eliminating the need to periodically check or “poll” for updates. Amazon SQS is a message queue service used by distributed applications to exchange messages through a polling model, and can be used to decouple sending and receiving components. 
 
-## EBS
-Amazon Elastic Block Store (EBS) is an easy to use, high performance block storage service designed for use with Amazon Elastic Compute Cloud (EC2) for both throughput and transaction intensive workloads at any scale.
 
-Block storage that can be encrypted=EBS
-
-https://aws.amazon.com/blogs/aws/protect-your-data-with-new-ebs-encryption/
-
-
-## Copying an Amazon EBS snapshot
-With Amazon EBS, you can create point-in-time snapshots of volumes, which we store for you in Amazon S3. After you create a snapshot and it has finished copying to Amazon S3 (when the snapshot status is completed), you can copy it from one AWS Region to another, or within the same Region.
 
 
 
@@ -140,6 +133,8 @@ https://aws.amazon.com/route53/
 - Active-passive failover (when you want a primary resource or group of resources to be available the majority of the time and you want a secondary resource or group of resources to be on standby in case all the primary resources become unavailable)
 - Latency routing policy – Use when you have resources in multiple AWS Regions and you want to route traffic to the region that provides the best latency.
 
+## Multivalue answer routing
+Multivalue answer routing lets you configure Amazon Route 53 to return multiple values, such as IP addresses for your web servers, in response to DNS queries. For example, use multivalue answer routing when you need to return multiple values for a DNS query and route traffic to multiple IP addresses.
 
 ## Kinesis Data Firehose
 Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data lakes, data stores, and analytics services. It can capture, transform, and deliver streaming data to Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, generic HTTP endpoints, and service providers like Datadog, New Relic, MongoDB, and Splunk. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. 
@@ -160,8 +155,7 @@ Highly available. NAT gateways in each Availability Zone are implemented with re
 https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-comparison.html
 
 ## NAT
-You can use a NAT device to enable instances in a private subnet to connect to the internet
-
+You can use a network address translation (NAT) gateway to enable instances in a private subnet to connect to the internet or other AWS services, but prevent the internet from initiating a connection with those instances.
 
 ## S3 prefix
 https://docs.aws.amazon.com/AmazonS3/latest/dev/optimizing-performance.html
