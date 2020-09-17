@@ -101,9 +101,7 @@ AWS CloudTrail is a web service that records activity made on your account and d
 
 
 
-## Customer master keys (CMKs)
-All activity using a key in a custom key store is also logged to AWS CloudTrail in the same way.
-https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html
+
 
 
 
