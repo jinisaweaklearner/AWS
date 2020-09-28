@@ -55,13 +55,9 @@ vs RDS Databases ports:
 ## Redshift
 Amazon Redshift workload management (WLM) enables users to flexibly manage priorities within workloads so that short, fast-running queries won't get stuck in queues behind long-running queries.
 
-
-
 - Automated Cross-Region Snapshot Copy for Amazon Redshift
 
 You simply select the second region and the desired retention period; Redshift will take care of the rest: https://aws.amazon.com/blogs/aws/automated-cross-region-snapshot-copy-for-amazon-redshift/
-
-
 
 
 
@@ -77,3 +73,5 @@ https://aws.amazon.com/blogs/aws/scalable-session-handling-in-php-using-amazon-d
   - represents a set of DB instances that you choose
 - Instance endpoint
 
+## Redshift Encryption at rest
+encrypts your data as it writes it in its data centers and decrypts it for you when you access it
