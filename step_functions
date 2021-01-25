@@ -1,0 +1,11 @@
+# Step Functions
+
+- a serverless orchestration service
+
+### Standard Workflow
+- exactly-once workflow execution and can run for up to one year
+
+
+### Express Workflow
+- at-least-once workflow execution and can run for up to five minutes
+- high-event-rate workloads, such as streaming data processing and IoT data ingestion
