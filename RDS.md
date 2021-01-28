@@ -53,6 +53,11 @@ vs RDS Databases ports:
 - Aurora: 5432 (if PostgreSQL compatible) or 3306 (if MySQL compatible)
 
 ## Redshift
+- OLAP (online analytical processing)
+- Scale to PB data
+- Columnar storage of data
+
+
 Amazon Redshift workload management (WLM) enables users to flexibly manage priorities within workloads so that short, fast-running queries won't get stuck in queues behind long-running queries.
 
 - Automated Cross-Region Snapshot Copy for Amazon Redshift
