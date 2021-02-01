@@ -1,5 +1,5 @@
 # VPC
-
+Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined.
 CIDR (Classless Inter-Domain Routing)
 
 - We’ve seen WW.XX.YY.ZZ/32 == one IP  
