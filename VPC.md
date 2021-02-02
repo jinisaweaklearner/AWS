@@ -39,6 +39,11 @@ Network ACLs & Security Group Incoming Request
 - A gateway VPC endpoint only supports S3 and DynamoDB
 - Interface VPC endpoints
 
+## Network ACLs
+A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets. 
+- [Comparison of security groups and network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html#VPC_Security_Comparison)
+
+
 ## Example
 you can create a public-facing subnet for your web servers that have access to the internet. You can also place your backend systems, such as databases or application servers, in a private-facing subnet with no internet access.
 
